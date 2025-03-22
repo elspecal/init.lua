@@ -2,12 +2,17 @@ return {
 	{
 		"echasnovski/mini.nvim",
 		version = false,
-		config = function ()
+		config = function()
 			require("mini.files").setup()
 			require("mini.pairs").setup({
 				mappings = {
 					["<"] = {
-						action = "closeopen",
+						action = "open",
+						pair = "<>",
+						neigh_pattern = "[^\\].",
+					},
+					[">"] = {
+						action = "close",
 						pair = "<>",
 						neigh_pattern = "[^\\].",
 					},
