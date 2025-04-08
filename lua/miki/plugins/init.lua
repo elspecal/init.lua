@@ -145,4 +145,5 @@ return {
 	-- 	"ghostty",
 	-- 	dir = "/usr/share/nvim/site"
 	-- }
+	"lbrayner/vim-rzip",
 }
