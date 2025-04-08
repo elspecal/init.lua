@@ -1,3 +1,11 @@
+local generate_formatters = function(formatters)
+	local t = {}
+	for i = 1, #formatters do
+		t[formatters[i]] = { "biome", "prettierd", stop_after_first = true }
+	end
+	return t
+end
+
 return {
 	{
 		"stevearc/conform.nvim",
@@ -20,12 +28,8 @@ return {
 				biome = { require_cwd = true },
 				prettierd = { require_cwd = true },
 			},
-			formatters_by_ft = {
-				javascript = { "biome", "prettierd", stop_after_first = true },
-				typescript = { "biome", "prettierd", stop_after_first = true },
-				javascriptreact = { "biome", "prettierd", stop_after_first = true },
-				typescriptreact = { "biome", "prettierd", stop_after_first = true },
-			},
+			formatters_by_ft = generate_formatters({ "javascript", "typescript", "javascriptreact", "typescriptreact",
+				"json" }),
 			default_format_opts = {
 				lsp_format = "fallback"
 			},
