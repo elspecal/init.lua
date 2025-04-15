@@ -18,7 +18,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		dependencies = { "nvim-vtsls" },
 		opts = {
-			ensure_installed = { "lua_ls", "vtsls", "biome", "cssls", "html", "jsonls", "yamlls" },
+			ensure_installed = { "lua_ls", "vtsls", "biome", "cssls", "html", "jsonls", "yamlls", "graphql" },
 			handlers = {
 				function(server_name)
 					require("lspconfig")[server_name].setup({})
