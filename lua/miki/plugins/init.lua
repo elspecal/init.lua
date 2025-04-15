@@ -53,6 +53,19 @@ return {
 			{ "<leader>fg", "<cmd>Telescope live_grep<CR>" },
 			{ "<leader>fb", "<cmd>Telescope buffers<CR>" },
 			{ "<leader>fh", "<cmd>Telescope help_tags<CR>" },
+			{ "<leader>fj", "<cmd>Telescope grep_string<CR>", mode = { "n", "v" } },
+		},
+		opts = {
+			pickers = {
+				buffers = {
+					mappings = {
+						i = {
+							["<C-d>"] = require("telescope.actions").delete_buffer +
+								require("telescope.actions").move_to_top,
+						},
+					},
+				},
+			},
 		},
 	},
 	{
